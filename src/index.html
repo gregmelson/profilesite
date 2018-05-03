@@ -3,18 +3,140 @@
  <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Lato">
 <style>
-body {
-  font-family: 'Lato', serif;
-  font-size: 48px;
+  /* Layout start */
+div.container {
+    width: 100%;
+    border: 1px solid gray;
 }
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+article {
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+  /*Layout end*/
+
+body {
+  font-family: 'Lato', serif;           /*Font Settings*/
+  font-size: 48px;                      /*Font Settings*/
+}
+/*Start Particles*/
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+/*End Particles*/
+}
+ /*Menu*/
+/*** Nav */
+.menu { font-family:"Lato",sans-serif;font-size:13px;margin:0;overflow:visible;text-align:center;width:100%; }
+#nav .menu { border:1px solid #d1d1d1;border-left:none;border-right:none;clear:both; }
+.menu li { display:inline-block;list-style-type:none;margin:0;padding:0; }
+.menu a { color:#aaa;display:block;line-height:1.0em;text-decoration:none;text-transform:uppercase; }
+#nav .menu a,
+#nav .menu .no-focus.current-menu-item > a { border-top:1px solid transparent;color:#909192;font-size:12px;margin:-1px 5px 0 5px;padding:18px 0 17px 0; }
+#nav .menu a:hover,
+#nav .menu .no-focus a:hover,
+#nav .menu .current-menu-item a,
+#nav .menu .current_page_parent a,
+#nav .menu .sfHover a { border-color:#000;color:#000;font-weight:bold; }
+.menu .sf-sub-indicator { display:none; }
+.menu .sub-menu { background:url("images/sprites022813.png") -240px -149px no-repeat;float:right;height:auto;left:-9999px;margin-left:-90px;margin-top:-4px;padding-top:4px;position:absolute;width:180px;z-index:9999; }
+.menu .our-journey .sub-menu { background-position:-232px -150px;margin-left:-45px;width:190px; }
+.menu .sub-menu li { background:transparent;display:block;margin:0;padding:0; }
+#nav .menu .sub-menu a,#menu-social .sub-menu a,.menu .sub-menu a { background:#000;border:none;border-bottom:1px solid #cecece;color:#fff;display:block;font-size:12px;font-weight:600;margin:0;opacity:0.9999;padding:15px 8px 14px 8px;text-align:center;text-transform:uppercase; }
+#nav .menu .sub-menu a:hover,#nav .menu .current-menu-item .sub-menu a,#nav .menu .sfHover .sub-menu a,.menu .sub-menu a:hover,.menu .current-menu-item .sub-menu a,.menu .sfHover .sub-menu a { border-bottom:1px solid #cecece;color:#fff; }
+.menu a,.post-info a { /*CSS3*/-moz-transition:color 0.6s;-o-transition:color 0.6s;-webkit-transition:color 0.6s;transition:color 0.6s; }
+.menu .sub-menu a { /*CSS3*/-moz-transition:background 0.4s;-o-transition:background 0.4s;-webkit-transition:background 0.4s;transition:background 0.4s; }
+#nav .menu .sub-menu li:last-child a,#menu-social .sub-menu li:last-child a,#nav .menu .sub-menu .last a,#menu-social .menu-social-twitter .sub-menu li:last-child { border:none; }
+#nav .menu .sub-menu a:hover,#menu-social .sub-menu a:hover,.menu .sub-menu a:hover { background:#444; }
+.menu .sub-menu ul { margin:-38px 0 0 201px; }
+.menu li:hover ul ul,.menu .sfHover ul ul { left:-9999px; }
+.menu li:hover,.menu .sfHover { position:relative; }
+.menu li:hover>.sub-menu,.menu .sfHover .sub-menu { left:50%; }
+.menu .our-journey .sub-menu { background-position:-111px -150px;font-size:11px;margin-left:-170px;width:447px; }
+.menu .our-journey .sub-menu { /*CSS3*/-moz-column-count:3;-o-column-count:3;-webkit-column-count:3;column-count:3;-moz-column-gap:0;-o-column-gap:0;-webkit-column-gap:0;column-gap:0; }
+.menu .our-journey .sub-menu li { /*CSS3*/-moz-column-break-inside:avoid;-o-column-break-inside:avoid;-webkit-column-break-inside:avoid;column-break-inside:avoid; }
+#menu-social { text-align:right; }
+#menu-social li { margin-top:10px;position:relative;vertical-align:top; }
+/*#menu-social .parent-menu-item { /*background:url("images/sprites022813.png") 0 -150px no-repeat;display:block;height:22px;margin-left:18px;overflow:hidden;text-align:left;text-indent:-9999px;width:20px; }*/
+#menu-social .parent-menu-item { /*CSS3*/-moz-transition:none;-o-transition:none;-webkit-transition:none;transition:none; }
+#menu-social .parent-menu-item { color:#cacaca;display:block;font-size:22px;height:22px;margin-left:23px;overflow:hidden;padding-bottom:5px;text-align:center;width:22px; }
+#menu-social .parent-menu-item span { display:none; }
+#menu-social .sfHover .parent-menu-item,#menu-social .parent-menu-item:hover { color:#333; }
+/*#menu-social .menu-social-facebook .parent-menu-item { background-position:0 -150px;width:20px; }
+#menu-social .menu-social-facebook.sfHover .parent-menu-item,#menu-social .menu-social-facebook .parent-menu-item:hover { background-position:-25px -150px; }
+#menu-social .menu-social-twitter .parent-menu-item { background-position:0 -175px;width:21px;margin-left:8px;margin-top:1px; }
+#menu-social .menu-social-twitter.sfHover .parent-menu-item,#menu-social .menu-social-twitter .parent-menu-item:hover { background-position:-25px -175px; }
+#menu-social .menu-social-gplus .parent-menu-item { background-position:0 -200px; }
+#menu-social .menu-social-gplus.sfHover .parent-menu-item,#menu-social .menu-social-gplus .parent-menu-item:hover { background-position:-25px -200px; }
+#menu-social .menu-social-pinterest .parent-menu-item { background-position:0 -225px;width:16px; }
+#menu-social .menu-social-pinterest.sfHover .parent-menu-item,#menu-social .menu-social-pinterest .parent-menu-item:hover { background-position:-24px -225px; }
+#menu-social .menu-social-photos .parent-menu-item { background-position:0 -300px;width:20px; }
+#menu-social .menu-social-photos.sfHover .parent-menu-item,#menu-social .menu-social-photos .parent-menu-item:hover { background-position:-25px -300px; }
+#menu-social .menu-social-youtube .parent-menu-item { background-position:0 -325px;width:20px; }
+#menu-social .menu-social-youtube.sfHover .parent-menu-item,#menu-social .menu-social-youtube .parent-menu-item:hover { background-position:-25px -325px; }
+#menu-social .menu-social-rss .parent-menu-item { background-position:0 -275px; }
+#menu-social .menu-social-rss.sfHover .parent-menu-item,#menu-social .menu-social-rss .parent-menu-item:hover { background-position:-25px -275px; }*/
+#menu-social .sub-menu { margin-top:0;padding-top:6px; }
+#menu-social .sub-menu li { margin-top:0;position:relative; }
+#menu-social .menu-social-facebook .sub-menu { background-position:-211px -148px;margin-left:-111px;width:258px; }
+#menu-social .menu-social-facebook .sub-menu li,#menu-social .menu-social-twitter .sub-menu li { background:#000; }
+#menu-social .menu-social-twitter .sub-menu { background-position:-239px -149px;margin-left:-82px;text-align:left;width:190px; }
+#menu-social .menu-social-twitter .sub-menu li {  }
+#menu-social .menu-social-gplus .sub-menu { background-position:-240px -148px;margin-left:-87px; }
+#menu-social .menu-social-photos .sub-menu { margin-left:-79px; }
+#menu-social .menu-social-search .sub-menu { background:transparent;border-bottom:1px solid #ccc;height:auto;margin-left:-465px;padding:6px 0 0 0;width:500px; }
+#menu-social .menu-social-search .sub-menu .menu-item { background:#fff;padding:10px 0; }
+#menu-social .menu-social-search .sub-menu .themins_search_form { margin:0; }
+#menu-social .menu-social-search input[type="text"] { border:1px solid #ccc;border-radius:0;-webkit-appearance:none;float:none;text-align:left;width:75%; }
+#menu-social .menu-social-search input[type="submit"] { float:none;height:49px;width:18%; }
+#menu-social .menu-social-search a { margin-right:25px; }
+#menu-social .follow_overlay { background:#000;height:41px;margin:0;opacity:0;position:absolute;left:0;top:0;z-index:9999; }
+#menu-social .follow_overlay { /*CSS3*/-moz-transition:opacity 0.4s;-o-transition:opacity 0.4s;-webkit-transition:opacity 0.4s;transition:opacity 0.4s; }
+#menu-social .menu-social-twitter .follow_overlay { width:190px; }
+#menu-social .menu-social-twitter .follow_overlay iframe { margin:10px 0 0 25px; }
+#menu-social .sub-menu .menu-item:hover .follow_overlay { opacity:0.999; }
+#menu-social .icon-periscope { background:url("images/icon-periscope.png") 50% 0 no-repeat;background-size:24px; }
+#menu-social .icon-periscope:hover { background-position:50% bottom; }
 </style> 
+<script>
+ 
+/*Start Particles*/
+  window.onload = function() {
+  Particles.init({
+    selector: '.background',
+  color: ['#DA0463', '#404B69', '#DBEDF3'],
+  connectParticles: true
+  });
+/*End Particles*/
+};
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+</script>
   <title>Greg Melson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
-  <body class="bg-green white-70 pa2">
-        <h1 class="f1">Greg Melson</h1>
-        <ul>
-          <li class="f5">Home</li>
+  <body >
+
+<div class="container">
+    <div class="nav">
+      <div class="wrap">
+          <ul id="menu-main-nav" class="menu genesis-nav-menu menu-primary">
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4238">Home</li>
           <li class="f5">About me</li>
           <li class="f5">Projects</li>
           <ol><li class="f5">C# Development</li>
@@ -23,5 +145,27 @@ body {
         </ol>
         <li class="f5">Contact</li>
         </ul>
+
+      </div>    
+    </div>
+    <header>
+       <h1 class="f-subheadline">About me</h1>
+       <h1 class="f1">Greg Melson : Developer</h1>
+    </header>
+
+    <article>
+      <h1 class="f1">I am</h1>
+      <p class="f2">A guy who is driven by a passion for learning. Born on the 4th of April in 1979, I've had a deep fasination of Information Technology since as long as I can remember. I've code in everything from 1's and 0's NAND's and NOTs </p>
+      <p class="f2">Thankfully I now use language that is higher level and easier to understand but I love bleeding edge of tech and constantly push myself to Learn</p>
+    </article>
+    
+    <footer>Copyright &copy; GregMelson.com</footer>
+    
+    </div>
+
+        <h1 class="f-headline">Greg Melson</h1>
+        
+        <canvas class="background"></canvas><!-- Added for particles background-->
+        <script src="../node_modules/particlesjs/dist/particles.min.js"></script> <!-- Added for a pretty dynamic particle background-->
   </body>
 </html>
