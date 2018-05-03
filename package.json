@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/gregmelson/profilesite/issues"
   },
-  "homepage": "https://github.com/gregmelson/profilesite#readme"
+  "homepage": "https://github.com/gregmelson/profilesite#readme",
+  "dependencies": {
+    "particlesjs": "^2.2.2"
+  }
 }
