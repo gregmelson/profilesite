@@ -76,14 +76,14 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
 <div class="container body-particles">
     <br><br><br>
     <div class="cloud" style="margin:auto;" ><img class="h-100 z-5 absolute left-30"  alt="Developer Greg Melson" src="http://res.cloudinary.com/share-point-co-za/image/upload/dl_2,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_white,e_make_transparent:10/v1534602507/gregmelson175x175.png"></div>
-    <div class="w-100 h-100 .cf:before bg-dark-gray"></div>
+    <div class="w-100 h-100 .cf:before f4 pa3 tc"><a class="mt0" href="#">About me</a> | <a href="#findme">Find me</a> | <a href="#contactme">Contact me</a></div>
     <div class="br5 br-pill w-60 db min-vh-20 white bg-dark-gray cl tc ma0 pa2 center .relative ">
        <h1 class="f1 ma0">About me</h1>
        <h1 class="f4 ma2">Greg Melson : Machine Learning</h1>
     </div>
 
     <article>
-      <h1 class="f2 ml5 mr5"><mark class="fw3 lh-solid bg-dark-gray white" >I am</mark></h1>
+      <h1 class="f2 ml5 mr5"><mark id="iam" class="fw3 lh-solid bg-dark-gray white" >I am</mark></h1>
       <p class="f3 ml5 mr5">Enthusiastic</p>
       <p class="f3 ml5 mr5">I'm a Developer, Engineer and a Generalist.</p>
     </article>
@@ -110,11 +110,14 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
         <p class="f3 ml5 mr5"> SEO and Adwords</p>
       </article>
     <article>
-        <h1 class="f2 ml5 mr5"><mark class="fw3 lh-solid bg-dark-gray white" >find me</mark></h1>
+        <h1 class="f2 ml5 mr5"><mark id="findme" class="fw3 lh-solid bg-dark-gray white" >Find me</mark></h1>
         <p class="f3 ml5 mr5"><a href="https://www.google.com/search?q=greg+melson">Google me</a></p>
-        <p class="f3 ml5 mr5"><a href="https://twitter.com/intent/tweet?screen_name=GregMelson&ref_src=twsrc%5Etfw" >Tweet me</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-        <p class="f3 ml5 mr5"><a href="https://api.whatsapp.com/send?phone=0027825741857">WhatsApp me</a></p> <!--https://wa.me/+27825741851/?text=hi-->
       </article>
+      <article>
+          <h1 class="f2 ml5 mr5"><mark id="contactme" class="fw3 lh-solid bg-dark-gray white" >Contact me</mark></h1>
+          <p class="f3 ml5 mr5"><a href="https://twitter.com/intent/tweet?screen_name=GregMelson&ref_src=twsrc%5Etfw" >Tweet me</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+          <p class="f3 ml5 mr5"><a href="https://api.whatsapp.com/send?phone=27825741857">WhatsApp me</a></p> <!--https://wa.me/+27825741851/?text=hi-->
+        </article>
     <div class="f5 pa2 w-100 db min-vh-20 white bg-dark-gray cl tc">Copyright &copy; gregmelson.com since the 4th of April 1979. </div>
     
     </div>
