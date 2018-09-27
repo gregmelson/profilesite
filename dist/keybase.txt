@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/gregmelson
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://gregmelson.com
+  * I am gregmelson (https://keybase.io/gregmelson) on keybase.
+  * I have a public key ASDrS8wcG5Ra42mrt7Gyr-k5utMyjXrKF-U7BKQoi-CSHgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120eb4bcc1c1b945ae369abb7b1b2afe939bad3328d7aca17e53b04a4288be0921e0a",
+      "host": "keybase.io",
+      "kid": "0120eb4bcc1c1b945ae369abb7b1b2afe939bad3328d7aca17e53b04a4288be0921e0a",
+      "uid": "79ce9107742155b3ac2527f03d327d19",
+      "username": "gregmelson"
+    },
+    "merkle_root": {
+      "ctime": 1538055980,
+      "hash": "f437074486be8a7843b26175c9f6ce833d2419eb0b689150ffd903fd2bf6233ad87d62a491a9f182b711422b97c8de474ab957b6497dec10f22c8869b99ac8fb",
+      "hash_meta": "38de7b7f984e73fb46743f9c192d669ac831e277edb0620f06b4519eacbe4741",
+      "seqno": 3700502
+    },
+    "service": {
+      "entropy": "Raonm9x9HfJON+N8o+hiCXXJ",
+      "hostname": "gregmelson.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.6.2"
+  },
+  "ctime": 1538055994,
+  "expire_in": 504576000,
+  "prev": "3398ad7f4c33e81bce544ab4bcb396b520833d0afaa21b6d49abe2e112d87efc",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg60vMHBuUWuNpq7exsq/pObrTMo16yhflOwSkKIvgkh4Kp3BheWxvYWTESpcCD8QgM5itf0wz6BvOVEq0vLOWtSCDPQr6ohttSavi4RLYfvzEIEnFiVZy+2J+uqVUSSrLz6+kNZCLnFSsx9O/VzTFOD7WAgHCo3NpZ8RAy+ILMaK4B3JglkHdSDF9idlXEoR3zs0O2drwnI0PTSGDOsV3X6jf1z58XRWxoG981naHerazGliaIH/2IcuhDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFYSrvofT21wmTzZg06eVZqLKXRGIerA9b0PHJqr0PQ7o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gregmelson
+
+==================================================================
