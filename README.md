@@ -5,7 +5,7 @@ This is a site to describe me and my work
 ## Live version 
 **What this does:** It's the live version of my site
 
-[link to Google sheet!](https://gregmelson.com)
+[link to site!](https://gregmelson.com)
 
 <details>
 <summary> More Details </summary>
@@ -16,7 +16,7 @@ This is a site to describe me and my work
    
    *Initial Setup Actions:* 
    
-   1. **Navigate:** `MENU` ->`JSON` [here in google ads!](https://config.gregmelson.com) 
+   1. **Navigate:** `MENU` ->`JSON` [here in site!](https://config.gregmelson.com) 
    2. **Ensure the correct configuration** variables are set
       <details>
       <summary>Config settings</summary>
