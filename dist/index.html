@@ -1,167 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
- <link rel="canonical" href="https://gregmelson.com/index.html"/>  <!-- SEO Stuff-->
- <meta name="description" content="This is the profile site of Gregory Melson also known as Greg Melson"> <!-- SEO Stuff-->
-<style>
-  
-  .cloud {
-  /*margin: 100px auto 0px auto;*/
-  width: 300px;
-  height: 100px;
-  border-radius: 100px;
-  position: relative;
-  background: #ffffff;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greg Melson — Automation Expert</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 
-.cloud:before,.cloud:after{
-  content: '';
-  border-radius: 100px;
-  position: absolute;
-  background: #ffffff;
-  z-index: 1;
-}
-.cloud:before{
-  width: 100px;
-  height: 100px;
-  top: -50px;
-  left: 45px;
-}
-.cloud:after{
-  width: 160px;
-  height: 160px;
-  top: -70px;
-  right: 45px;
-}
-  /* Layout start */
-div.container {
-    width: 100%;
-}
-
- background {z-index: -1;}
-
-  /*Layout end*/
-
-body {
-  font-family: 'Lato', serif;           /*Font Settings*/
-  font-size: 24px;                      /*Font Settings*/
-  max-width: 800px;
-  margin: 0 auto;
-
-}
-
-#myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-}
-
-#myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
-    animation: color_change 1s;
-}
-
-</style> 
-<script>
- // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f4037);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
     }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-/*Start Particles 
-  window.onload = function() {
-  Particles.init({
-    selector: '.background',
-  color: ['#DA0463', '#404B69', '#DBEDF3'],
-  connectParticles: true
-  });
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-};
-/*End Particles*/
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); 
-particlesJS.load('particles-js', 'assets/particles.json', function() {
-  console.log('callback - particles.js config loaded');
-});*/
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      animation: fadeIn 1.5s ease-out;
+    }
 
-</script>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-  <title>Greg Melson</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
-  <body class="mw7-ns center bg-light-gray pa3 ph3-ns " >
-   
-<div class="container body-particles">  
-    <br><br><br>
-    <div class="cloud" style="margin:auto;" ><img class="h-100 z-5 absolute left-30"  alt="Developer Greg Melson" src="https://res.cloudinary.com/share-point-co-za/image/upload/dl_2,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_white,e_make_transparent:10/v1534602507/gregmelson175x175.png" title="A picture of the owner of GregMelson.com">  <p class=" aspect-ratio--object absolute pl6 f4 cloud-text">   #Greg Melson </p></div>  <!--   <br><span class=" aspect-ratio--object  pl6 cloud-text">Greg Melson </span><span class="f5 aspect-ratio--object pl6 cloud-text">Heads in the clouds</span> !-->
-    <div class="w-50-ns h-100 bg-dark-gray blue ma2 br5-ns br-pill-ns center"> <div class="w-100 h-100 cf:before f4 pa2 tc"><a class="mt0 grow bg-dark-gray dib pa1 light-blue no-underline" href="#iam">About me</a> | <a class="mt0 grow bg-dark-gray dib pa1 light-red no-underline" href="#findme">Find me</a> | <a <a class="mt0 grow bg-dark-gray dib pa1 light-yellow no-underline" href="#contactme">Ping me</a></div></div>
-    
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
 
-    <article>
-      <h1 class="f2 ml5-ns mr5-ns ml1 mr1"><mark id="iam" class="fw3 lh-solid bg-dark-gray light-blue">I am</mark></h1>
-      <p class="f3 ml5-ns mr5-ns ml1 mr1">Enthusiastic</p>
-      <p class="f3 ml5-ns mr5-ns ml1 mr1">I'm a Developer, Engineer and a Generalist.</p>
-    </article>
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
 
-    <article>
-        <h1 class="f2 ml5-ns mr5-ns ml1 mr1"><mark class="fw3 lh-solid bg-dark-gray light-blue" >I use</mark></h1>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1">Everything necessary to solve a given problem.</p>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1">E.g. Visual Studio, WordPress, After effects, Affinity, Git, Azure.</p>
-      </article>
+    header p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: auto;
+    }
 
-      <article>
-          <h1 class="f2 ml5-ns mr5-ns ml1 mr1"><mark class="fw3 lh-solid bg-dark-gray light-blue" >I enjoy</mark></h1>
-          <p class="f3 ml5-ns mr5-ns ml1 mr1">Delivering value.</p>
-          <p class="f3 ml5-ns mr5-ns ml1 mr1">Nature</p>
-          <p class="f3 ml5-ns mr5-ns ml1 mr1">Pondering and People.</p>
-          <p class="f3 ml5-ns mr5-ns ml1 mr1">Challenges and sitting at the bleeding edge of technology excites me.</p>
-          <p class="f3 ml5-ns mr5-ns ml1 mr1">Pushing myself to learn. </p>
-            
-              <p class="f3 ml5-ns mr5-ns ml1 mr1">Trying new things is where I'm at.</p>
-        </article>
-    <article>
-        <h1 class="f2 ml5-ns mr5-ns ml1 mr1"><mark class="fw3 lh-solid bg-dark-gray light-blue" >I do</mark></h1>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1">Problem solving.</p>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1">Full stack Development. Using HTML, CSS, JavaScript, C#, PHP, Python, and I do whatever it takes to achieve the goal. </p>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1">Graphics Design. Using Affinity and Adobe products.</p>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1">SEO and Adwords</p>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1">Machine Learning</p>
-      </article>
-    <article>
-        <h1 class="f2 ml5-ns mr5-ns ml1 mr1"><mark id="findme" class="fw3 lh-solid bg-dark-gray light-red" >Find me</mark> </h1>
-        <p class="f3 ml5-ns mr5-ns ml1 mr1"><a href="q=greg+melson+-spokeo.com+-stevewoit.photoshelter.com+-gregm27+-mylife.com+-Fundtech+-gettyimages.com+-peekyou.com+-content-magazine.com+-whitepages.com+-web2nl">Google me</a></p>    </article>
-      <article>
-          <h1 class="f2 ml5-ns mr5-ns ml1 mr1"><mark id="contactme" class="fw3 lh-solid bg-dark-gray light-yellow" >Ping me</mark></h1>
-          <p class="f3 ml5-ns mr5-ns ml1 mr1"><a href="https://twitter.com/intent/tweet?screen_name=GregMelson&ref_src=twsrc%5Etfw" >Tweet me</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-          <p class="f3 ml5-ns mr5-ns ml1 mr1"><a class="di-m di-l db" href="tel:+27825741857">Call Me</a></p> <!--https://wa.me/+27825741851/?text=hi-->
-          <p class="f3 ml5-ns mr5-ns ml1 mr1 dn-ns"><a class="dn-ns" href="https://api.whatsapp.com/send?phone=27825741857">WhatsApp me</a></p>
-        </article>
-    <div class="f5 pa2 w-100 db min-vh-20 white bg-dark-gray cl tc">Copyright &copy; Greg Melson since the 4th of April 1979. </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    section.show {
+      opacity: 1;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .animation-box {
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+
+    .linkedin-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0077b5;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .linkedin-button:hover {
+      background: #005582;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.25rem; }
+      section { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+   <img class="h-100 z-5 absolute left-30"  alt="Developer Greg Melson" src="https://res.cloudinary.com/share-point-co-za/image/upload/dl_2,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_white,e_make_transparent:10/v1534602507/gregmelson175x175.png" title="A picture of the owner of GregMelson.com">  
+    <h1>Hi, I'm Greg Melson 👋</h1>
+    <p>Automation Developer & Process Optimizer — I create smart systems that make work effortless.</p>
+  </header>
+
+  <div class="animation-box">
+    <canvas id="bgCanvas"></canvas>
+  </div>
+
+  <section id="about">
+    <div class="card">
+      <h2>🚀 What I Do</h2>
+      <p>I specialize in crafting automation workflows, intuitive apps, and process improvements using tools like Power Automate, SharePoint, Microsoft Graph API, HTML, and custom scripts.</p>
     </div>
-  <!-- particles.js container -->
- 
-  <!--  <canvas style="z-index: -1;" class="background absolute db top-0 left-0"></canvas><!-- Added for particles background-->  
-    <!--     <script src="../node_modules/particlesjs/dist/particles.min.js"></script> <!-- Added for a pretty dynamic particle background-->
-  </body>
+
+    <div class="card">
+      <h2>🧠 What Makes Me Different</h2>
+      <p>I don't just solve problems — I anticipate them. My solutions are elegant, maintainable, and people-focused. Whether it's automating a weekly report or building an end-to-end clinical note app, I deliver quality and clarity.</p>
+    </div>
+
+    <div class="card">
+      <h2>💼 Recent Highlights</h2>
+      <ul>
+        <li>Built a clinical note-taking app used by one of KZN’s largest physio practices</li>
+        <li>Created workflow automations saving 40+ admin hours per month</li>
+        <li>Designed interfaces that users actually enjoy using</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📞 Let's Talk</h2>
+      <p>If you're a business looking to save time, reduce errors, or scale smarter — I'd love to help. Let's build something impactful.</p>
+      <a class="linkedin-button" href="https://linkedin.com/in/gregmelson" target="_blank">
+        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Greg Melson © 2025 • Built with 💡 and pure code</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 400;
+    canvas.height = 300;
+
+    let particles = Array.from({ length: 60 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 1,
+      vy: (Math.random() - 0.5) * 1,
+      r: Math.random() * 2 + 1
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,0.7)';
+        ctx.fill();
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
 </html>
