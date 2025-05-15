@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Greg Melson - Animated Header</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      background-color: #121212;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 320px;
+    }
+
+    /* === Image grow effect === */
+    .img-wrapper {
+      width: 175px;
+      height: 175px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .img-grow {
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      border-radius: 50%;
+      animation: growIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes growIn {
+      0% {
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        width: 175px;
+        height: 175px;
+        opacity: 1;
+      }
+    }
+
+    .img-grow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      user-select: none;
+    }
+
+    /* Typed text container */
+    #typed-text {
+      font-size: 3rem;
+      font-weight: 700;
+      overflow: hidden;
+      max-width: 28ch;
+      min-height: 3.5rem;
+      letter-spacing: 0.03em;
+      position: relative;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      opacity: 0;
+    }
+
+    /* The span that holds the typed text */
+    #typing-content {}
+
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 3.5rem;
+      background-color: white;
+      margin-left: 4px;
+      animation: blink-caret 0.7s step-end infinite;
+      flex-shrink: 0;
+      opacity: 0; /* start hidden */
+    }
+
+    @keyframes blink-caret {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Laser effect subheader */
+    #laser-text, #laser-text2 {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      color: transparent;
+      filter: drop-shadow(0 0 1px white);
+      user-select: none;
+      font-weight: 600;
+      overflow: hidden;
+      min-height: 1.5em;
+      transition: color 1.5s ease;
+      text-align: center;
+    }
+
+    #laser-text.revealed, #laser-text2.revealed {
+      color: white;
+      filter: none;
+      animation: textReveal 1.5s ease forwards;
+    }
+
+    @keyframes textReveal {
+      from {
+        color: transparent;
+        filter: drop-shadow(0 0 1px white);
+      }
+      to {
+        color: white;
+        filter: none;
+      }
+    }
+
+    /* Can you say text */
+    #can-you-say {
+      opacity: 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #aaa;
+      margin-bottom: 0.2rem;
+      height: 1.5rem;
+      transition: opacity 1s ease;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="img-wrapper">
+      <div class="img-grow" id="img-grow">
+        <img
+          alt="Developer Greg Melson"
+          src="https://res.cloudinary.com/share-point-co-za/image/upload/dl_2,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_white,e_make_transparent:10/v1534602507/gregmelson175x175.png"
+          title="A picture of the owner of GregMelson.com"
+          draggable="false"
+        />
+      </div>
+    </div>
+<!-- Modal -->
+<div id="modal" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+">
+  <div>Just a moment...<br />I'm getting things ready</div>
+</div>
+
+      <div id="can-you-say">Click</div>
+    <h1 id="typed-text" aria-label="Hi, I'm Greg waving hand">
+
+      <span id="typing-content">
+        Hi, <span id="im-part">I'm</span> Greg
+      </span>
+      <span class="cursor" id="cursor"></span>
+    </h1>
+
+    <h2 id="laser-text" aria-hidden="true"></h2>
+    <h2 id="laser-text2" aria-hidden="true"></h2>
+  </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const imgGrow = document.getElementById('img-grow');
+      const typedTextEl = document.getElementById('typed-text');
+      const typingContent = document.getElementById('typing-content');
+      const cursorEl = document.getElementById('cursor');
+      const imPart = document.getElementById('im-part');
+      const canYouSay = document.getElementById('can-you-say');
+      const laserText1 = document.getElementById('laser-text');
+      const laserText2 = document.getElementById('laser-text2');
+
+      const fullText = "Hi, I'm Greg";
+      let currentIndex = 0;
+      let typingSpeed = 100; // ms per character
+
+      // Function to type text letter by letter
+      function type() {
+        if (currentIndex < fullText.length) {
+          typingContent.textContent += fullText.charAt(currentIndex);
+          currentIndex++;
+          setTimeout(type, typingSpeed);
+        } else {
+          // Typing complete
+          cursorEl.style.opacity = 1; // start blinking cursor
+          afterTyping();
+        }
+      }
+
+      // Reset typed content before typing to avoid duplicates
+      typingContent.textContent = '';
+
+      // Fade functions
+      function fadeOutElement(element, duration, callback) {
+        element.style.transition = `opacity ${duration}ms`;
+        element.style.opacity = 0;
+        setTimeout(() => {
+          if (callback) callback();
+        }, duration);
+      }
+
+      function fadeInElement(element, duration, callback) {
+        element.style.display = 'block';
+        void element.offsetWidth;
+        element.style.transition = `opacity ${duration}ms`;
+        element.style.opacity = 1;
+        if (callback) {
+          setTimeout(callback, duration);
+        }
+      }
+
+      // After typing finishes
+      function afterTyping() {
+        // Fade out only the "I'm"
+        fadeOutElement(imPart, 1000, () => {
+          // Show "Can you say" above
+          canYouSay.style.opacity = 1;
+
+          // Then show the laserText1 message "Let's work smartly together"
+          laserText1.textContent = "Let's work smartly together";
+          laserText1.classList.add('revealed');
+        });
+      }
+
+      // Wait for image animation to finish (1.5s duration + 0.5s delay = 2s)
+      imgGrow.addEventListener('animationend', () => {
+        // Show typed text container
+        typedTextEl.style.opacity = 1;
+
+        // Start typing
+        type();
+      });
+
+      // Click or touch handler to show follow-up text
+      let followUpShown = false;
+      function showFollowUp(event) {
+        if (followUpShown) return;
+        followUpShown = true;
+
+        laserText2.textContent = "We can build solutions that make optimal results happen, when we click like that";
+        laserText2.classList.add('revealed');
+      }
+
+function showFollowUp(event) {
+  if (followUpShown) return;
+  followUpShown = true;
+
+  // Show laser text as before
+  laserText2.textContent = "We can build solutions that make optimal results happen, when we click like that";
+  laserText2.classList.add('revealed');
+
+  // Show modal
+  const modal = document.getElementById('modal');
+  modal.style.display = 'flex';
+  requestAnimationFrame(() => {
+    modal.style.opacity = '1';
+  });
+
+  // Redirect after 3 seconds
+  setTimeout(() => {
+    window.location.href = "https://gregmelson.github.io/profilesite/dist/index.html";
+  }, 3000);
+}
+
+
+      // Listen for click or touch anywhere
+      document.addEventListener('click', showFollowUp);
+      document.addEventListener('touchstart', showFollowUp);
+    });
+  </script>
+</body>
+</html>
