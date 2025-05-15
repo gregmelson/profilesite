@@ -99,31 +99,93 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #0077b5;
-      color: white;
+      background: transparent;
+      border: 2px solid #0077b5;
+      color: #0077b5;
       padding: 0.6rem 1.2rem;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       margin-top: 1rem;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .linkedin-button:hover {
-      background: #005582;
+      background: #0077b5;
+      color: white;
     }
 
     @media (max-width: 768px) {
       header h1 { font-size: 2.25rem; }
       section { padding: 1rem; }
     }
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem; /* nice horizontal breathing room */
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  line-height: 1.5; /* improve vertical spacing */
+}
+
+/* Headings spacing */
+.card h2 {
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraph spacing and alignment */
+.card p {
+  margin-bottom: 1rem;
+  margin-left: 0; 
+  max-width: 600px; /* easier reading line length */
+}
+
+/* Lists: bullets and numbers consistent indentation */
+.card ul, 
+.card ol {
+  padding-left: 1.5rem; /* align bullets/numbers */
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+/* List items spacing */
+.card ul li, 
+.card ol li {
+  margin-bottom: 0.4rem;
+}
+
+/* Numbered lists: numbers inside */
+.card ol {
+  list-style-position: inside;
+}
+
+/* Slight padding on list items for neat alignment */
+.card ol li {
+  padding-left: 0.25rem;
+}
+.card p {
+  max-width: 100%; /* allows full width inside card */
+  margin-bottom: 1rem;
+  margin-left: 0;
+  line-height: 1.5;
+}
+
+/* Optional: limit max width for very large screens */
+@media (min-width: 1200px) {
+  .card p {
+    max-width: 800px; /* comfortable max width on big screens */
+  }
+}
+
   </style>
 </head>
 <body>
   <header>
-   <img class="h-100 z-5 absolute left-30"  alt="Developer Greg Melson" src="https://res.cloudinary.com/share-point-co-za/image/upload/dl_2,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_white,e_make_transparent:10/v1534602507/gregmelson175x175.png" title="A picture of the owner of GregMelson.com">  
+     <img class="h-100 z-5 absolute left-30"  alt="Developer Greg Melson" src="https://res.cloudinary.com/share-point-co-za/image/upload/dl_2,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_white,e_make_transparent:10/v1534602507/gregmelson175x175.png" title="A picture of the owner of GregMelson.com">
     <h1>Hi, I'm Greg Melson 👋</h1>
-    <p>Automation Developer & Process Optimizer — I create smart systems that make work effortless.</p>
+    <p>Automation Developer & Process Optimizer <br> I create smart systems that aim to make work effortless.</p>
   </header>
 
   <div class="animation-box">
@@ -133,28 +195,48 @@
   <section id="about">
     <div class="card">
       <h2>🚀 What I Do</h2>
-      <p>I specialize in crafting automation workflows, intuitive apps, and process improvements using tools like Power Automate, SharePoint, Microsoft Graph API, HTML, and custom scripts.</p>
+      <p>I design and implement custom digital workflows, intuitive apps, and automated systems to help businesses run smarter. I leverage tools like Power Automate, SharePoint, Microsoft Graph API, Excel, HTML/JS, and cloud platforms to solve real-world problems efficiently.</p>
     </div>
 
     <div class="card">
-      <h2>🧠 What Makes Me Different</h2>
-      <p>I don't just solve problems — I anticipate them. My solutions are elegant, maintainable, and people-focused. Whether it's automating a weekly report or building an end-to-end clinical note app, I deliver quality and clarity.</p>
-    </div>
-
-    <div class="card">
-      <h2>💼 Recent Highlights</h2>
+      <h2>🛠️ My Experience</h2>
       <ul>
-        <li>Built a clinical note-taking app used by one of KZN’s largest physio practices</li>
-        <li>Created workflow automations saving 40+ admin hours per month</li>
-        <li>Designed interfaces that users actually enjoy using</li>
+        <li>Built and support clinical note-taking apps for leading physiotherapy practices</li>
+        <li>Created Excel-integrated automation that extracts, transforms, and sends reports via email</li>
+        <li>Managed SharePoint Online environments, permission structures, and custom lists for departments</li>
+        <li>Used Graph API and HTTP connectors to push/pull data between systems in secure, scalable ways</li>
+        <li>Automated repetitive admin tasks saving 40+ hours/month in workflows and manual effort</li>
+        <li>Built internal tools to help staff track and verify entries with real-time feedback (status indicators, voice input, etc.)</li>
       </ul>
     </div>
 
     <div class="card">
+      <h2>🧠 Skills Snapshot</h2>
+      <ul>
+        <li>Power Automate (cloud flows, triggers, HTTP actions, JSON manipulation)</li>
+        <li>Microsoft Excel (tables, scripting, automation integration)</li>
+        <li>SharePoint Online (custom lists, permissions, site config)</li>
+        <li>Microsoft Graph API (OneDrive, Excel endpoints, list access)</li>
+        <li>Frontend dev: HTML, JavaScript, TailwindCSS basics</li>
+        <li>Workflow logic, edge case handling, user training & documentation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>⚙️ How I Work</h2>
+      <ol>
+        <li><strong>Clarity First:</strong> I listen, ask questions, and define what really needs solving.</li>
+        <li><strong>Build Smart:</strong> I build fast, test often, and keep things simple for users.</li>
+        <li><strong>Empower Others:</strong> I create handovers that include training, documentation, and clarity.</li>
+        <li><strong>Improve as We Go:</strong> My work evolves with user feedback, scaling smoothly.</li>
+      </ol>
+    </div>
+
+    <div class="card">
       <h2>📞 Let's Talk</h2>
-      <p>If you're a business looking to save time, reduce errors, or scale smarter — I'd love to help. Let's build something impactful.</p>
+      <p>If you're looking to automate, simplify, or innovate how work gets done — I'd love to chat. Whether you're in healthcare, education, business ops, or something totally different, I bring clarity and efficiency to your digital systems.</p>
       <a class="linkedin-button" href="https://www.linkedin.com/in/gregory-melson" target="_blank">
-        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        <i class="fab fa-linkedin"></i> LinkedIn
       </a>
     </div>
   </section>
